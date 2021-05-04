@@ -1,28 +1,22 @@
 const diagram = new Diagram();
 
-window.onload = () => {
-  diagram.loadAllElements([
-    new DatabaseTable('fahrt', [
-      new DatabaseTableColumn('id', 'VARCHAR'),
-      new DatabaseTableColumn('id', 'INT'),
-    ]),
-    new DatabaseTable('zugtyp', [
-      new DatabaseTableColumn('id', 'VARCHAR'),
-      new DatabaseTableColumn('hersteller', 'AWDASDAWDASDAwd'),
-    ]),
-    new DatabaseTable('test', []),
-    new DatabaseTable('fahrt', [
-      new DatabaseTableColumn('id', 'VARCHAR'),
-      new DatabaseTableColumn('id', 'INT'),
-    ]),
-    new DatabaseTable('fahrt', [
-      new DatabaseTableColumn('id', 'VARCHAR'),
-      new DatabaseTableColumn('id', 'INT'),
-      new DatabaseTableColumn('id', 'INT'),
-    ]),
-    new DatabaseTable('fahrt', [
-      new DatabaseTableColumn('id', 'VARCHAR'),
-      new DatabaseTableColumn('id', 'INT'),
-    ]),
-  ]);
+const requestDiagramData = () => {
+  return new Promise((resolve, reject) => {
+    const request = new XMLHttpRequest();
+    request.open('GET', '/data/diagram_data.json', true);
+
+    request.onload = () => {
+      if (request.status == 200) resolve(request.response);
+      else reject(request.status, request.statusText);
+    };
+
+    request.send();
+  });
+};
+
+window.onload = async () => {
+  const response = await requestDiagramData();
+  const jsonData = JSON.parse(response);
+
+  diagram.loadAllElements(jsonData.tables);
 };

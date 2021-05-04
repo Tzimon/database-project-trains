@@ -18,16 +18,20 @@
   margin-top: 1em;
 }
 
-.diagram {
+.diagram-section {
+  position: relative;
+}
+
+.diagram-tables {
   margin-top: 4rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(auto, 1fr);
-  gap: 7.5rem;
+  gap: 5rem;
 }
 
 @media screen and (max-width: 800px) {
-  .diagram {
+  .diagram-tables {
     grid-template-columns: 1fr;
   }
 }
@@ -39,6 +43,7 @@
 
 .diagram-table h3 {
   margin-bottom: 0.5em;
+  color: var(--color-neutral-7);
 }
 
 .diagram-table p {
@@ -52,4 +57,10 @@
 
 .diagram-table li::marker {
   color: var(--color-neutral-8);
+}
+
+.diagram canvas {
+  position: absolute;
+  inset: 0;
+  z-index: -10;
 }

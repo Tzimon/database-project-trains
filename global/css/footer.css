@@ -1,0 +1,14 @@
+footer {
+  padding: 3rem 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--color-neutral-3);
+}
+
+footer p {
+  font-size: 1rem;
+  color: var(--color-neutral-7);
+}

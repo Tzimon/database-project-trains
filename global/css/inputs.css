@@ -1,0 +1,40 @@
+.button {
+  padding: 0.25em 1.5em;
+
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--color-neutral-1);
+
+  outline: none;
+  border: none;
+  border-radius: 100vw;
+  background-color: var(--color-button-1);
+
+  transition: transform 200ms ease-out, box-shadow 200ms ease-out;
+}
+
+.button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px var(--color-transparent-1);
+}
+
+.input-field {
+  padding: 0.5em 1.5em;
+
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-neutral-8);
+
+  outline: none;
+  border: none;
+  border-radius: 100vw;
+  background-color: var(--color-neutral-2);
+  box-shadow: 0 0 10px var(--color-transparent-1);
+}
+
+textarea.input-field {
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  resize: none;
+}

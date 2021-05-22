@@ -3,39 +3,47 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="/css/global.css" />
-    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="/global/css/global.css" />
+    <link rel="stylesheet" href="./style.css" />
 
     <title>Züge | Datenbank Projekt</title>
 
-    <script src="js/Diagram.js"></script>
-    <script src="js/loadDiagram.js"></script>
+    <script src="js/functions.js"></script>
+    <script src="js/TableOverviews.js"></script>
+    <script src="js/loadTableOverviews.js"></script>
+    <script src="js/query.js"></script>
+    <script src="js/onload.js"></script>
   </head>
   <body>
-    <section class="head-section section">
-      <div class="container">
-        <h1 class="page-title">Züge</h1>
-        <h3 class="page-subtitle">
-          ein Datenbank Projekt von Niklas Kirner, Simon Pelz, Felix "Dominator" Pörényi und Tom
-          Zwingel
-        </h3>
-      </div>
-    </section>
-    <section class="description-section section">
-      <div class="container">
-        <h2>Beschreibung</h2>
-        <p>
-          Unser Datenbank Projekt besteht aus 7 Tabellen, die die Zusammenhänge zwischen täglichen
-          Zugfahrten, Zugtypen und deren Herstellern, Haltestellen und Orten herstellen.
-        </p>
-      </div>
-    </section>
-    <section class="diagram-section section">
-      <div class="container">
-        <h2>Diagramm</h2>
+    <main>
+      <section class="head-section section">
+        <div class="container">
+          <h1 class="page-title">Züge</h1>
+          <h3 class="page-subtitle">
+            ein Datenbank Projekt von Niklas Kirner, Simon Pelz, Felix "Dominator" Pörényi und Tom
+            Zwingel
+          </h3>
+        </div>
+      </section>
+      <section class="description-section section">
+        <div class="container">
+          <h2>Beschreibung</h2>
+          <p>
+            Unser Datenbank Projekt besteht aus 7 Tabellen, die die Zusammenhänge zwischen täglichen
+            Zugfahrten, Zugtypen und deren Herstellern, Haltestellen und Orten herstellen.
+          </p>
+        </div>
+      </section>
+      <section class="table-overview-section section">
+        <div class="container">
+          <h2>Tabellen</h2>
+          <div class="table-overview"></div>
+        </div>
+      </section>
+    </main>
 
-        <div class="diagram"></div>
-      </div>
-    </section>
+    <footer>
+      <p>© 2021 Simon Pelz</p>
+    </footer>
   </body>
 </html>

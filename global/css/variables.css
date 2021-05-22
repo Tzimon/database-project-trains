@@ -1,0 +1,16 @@
+:root {
+  --color-neutral-1: #ffffff;
+  --color-neutral-2: #eeeeee;
+  --color-neutral-3: #dddddd;
+  --color-neutral-7: #575757;
+  --color-neutral-8: #3d3d3d;
+  --color-neutral-9: #222222;
+
+  --color-transparent-1: #00000022;
+  --color-transparent-2: #00000055;
+
+  --color-button-1: #7d77d8;
+
+  --color-description-1: #e67154;
+  --color-description-2: #ee9038;
+}

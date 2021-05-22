@@ -1,23 +1,9 @@
-@font-face {
-  font-family: alaska;
-  src: url('/assets/alaska.ttf');
-}
-
-:root {
-  --color-neutral-1: #ffffff;
-  --color-neutral-7: #575757;
-  --color-neutral-8: #3d3d3d;
-  --color-neutral-9: #222222;
-
-  --color-description-1: #e67154;
-  --color-description-2: #ee9038;
-}
-
 * {
   margin: 0;
   padding: 0;
 
   box-sizing: border-box;
+  line-height: 1.8;
 
   word-wrap: break-word;
 }
@@ -40,10 +26,10 @@ p {
   font-size: 1.5rem;
   font-weight: 400;
   color: var(--color-neutral-8);
-  line-height: 1.8;
 }
 
 a {
+  display: inline-block;
   font-size: 1.5rem;
   font-weight: 700;
   text-decoration: none;
@@ -53,6 +39,7 @@ a {
 h1 {
   font-size: 4rem;
   font-weight: 700;
+  line-height: 1;
   color: var(--color-neutral-9);
 }
 
@@ -76,4 +63,16 @@ h3 {
 
 .section {
   padding: 5rem 0;
+}
+
+.section h2 + * {
+  margin-top: 3rem;
+}
+
+.head-section {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: var(--color-transparent-2);
+  background-blend-mode: overlay;
 }

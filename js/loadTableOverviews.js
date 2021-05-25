@@ -1,7 +1,7 @@
 const tableOverviews = new TableOverviews();
 
 const fetchData = async () => {
-  return (await fetch('http://localhost:3000/trains/tables')).json();
+  return (await fetch('http://api.arcyle.de/trains/tables')).json();
 };
 
 const loadTablesOverview = async () => {

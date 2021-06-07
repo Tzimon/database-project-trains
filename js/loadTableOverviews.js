@@ -1,10 +1,22 @@
-const tableOverviews = new TableOverviews();
-
 const fetchData = async () => {
-  return (await fetch('http://api.arcyle.de/trains/tables')).json();
+  const data = await fetch('http://api.arcyle.de/trains/tables');
+  return await data.json();
 };
 
-const loadTablesOverview = async () => {
-  const jsonData = await fetchData();
-  tableOverviews.loadAllElements(jsonData.tables);
+const loadTableOverviews = async () => {
+  const tableOverviews = TableOverview.getAllOverviews();
+
+  try {
+    const jsonData = await fetchData();
+
+    for (const tableOverview of tableOverviews) {
+      tableOverview.loadElement(jsonData.tables);
+    }
+  } catch {
+    for (const tableOverview of tableOverviews) {
+      tableOverview.loadError();
+    }
+  }
 };
+
+loadTableOverviews();

@@ -1,31 +1,28 @@
 class TableOverview {
-  static color = 0;
-
-  constructor(element) {
+  constructor(element, color) {
     this.element = element;
+    this.color = color;
   }
 
-  static getAllOverviews() {
-    const tableOverviews = [];
+  loadElement(tables) {
+    this.element.innerHTML = '';
 
-    for (const element of document.getElementsByClassName('table-overview')) {
-      tableOverviews.push(new TableOverview(element));
+    let i = 0;
+    console.log(tables);
+
+    for (const tableName in tables) {
+      console.log('b');
+      this.element.appendChild(this.createTableElement(tableName, tables, i++));
     }
-
-    return tableOverviews;
   }
 
-  static nextColor(tableCount) {
-    return (this.color++ * 360) / tableCount;
-  }
-
-  static createTableElement(tableName, tables) {
+  createTableElement(tableName, tables, i) {
+    const color = (i * 360) / Object.keys(tables).length;
+    console.log(color);
     const table = tables[tableName];
 
     const element = createElement('div', { class: 'table' });
-    element.style.backgroundColor = `hsl(${this.nextColor(
-      Object.keys(tables).length
-    )}, 35%, 90%)`;
+    element.style.backgroundColor = `hsl(${color}, 35%, 90%)`;
 
     const titleElement = createElement('h3', { innerText: tableName });
     element.appendChild(titleElement);
@@ -50,23 +47,13 @@ class TableOverview {
     return createElement('p', { innerText: `${columnName} (${column})` });
   }
 
-  loadElement(tables) {
-    this.element.innerHTML = '';
-
-    for (const tableName in tables) {
-      this.element.appendChild(
-        TableOverview.createTableElement(tableName, tables)
-      );
-    }
-  }
-
   loadError() {
     this.element.innerHTML = '';
 
     this.element.appendChild(
       createElement('p', {
         class: 'error',
-        innerText: 'Verbindungsfehler',
+        innerText: 'Ladefehler',
       })
     );
   }

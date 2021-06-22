@@ -8,17 +8,14 @@ class TableOverview {
     this.element.innerHTML = '';
 
     let i = 0;
-    console.log(tables);
 
     for (const tableName in tables) {
-      console.log('b');
       this.element.appendChild(this.createTableElement(tableName, tables, i++));
     }
   }
 
   createTableElement(tableName, tables, i) {
     const color = (i * 360) / Object.keys(tables).length;
-    console.log(color);
     const table = tables[tableName];
 
     const element = createElement('div', { class: 'table' });
@@ -39,6 +36,12 @@ class TableOverview {
       );
       listElement.appendChild(listItemElement);
     });
+
+    const buttonElement = createElement('button', {
+      class: 'button',
+      innerText: 'Anzeigen',
+    });
+    element.appendChild(buttonElement);
 
     return element;
   }

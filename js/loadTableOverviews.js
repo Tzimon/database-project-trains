@@ -5,17 +5,17 @@ const fetchTables = async () => {
 
 const loadTableOverviews = async () => {
   const tableOverviews = getAllOverviews();
+  let data;
 
   try {
-    const jsonData = await fetchTables();
-
-    for (const tableOverview of tableOverviews) {
-      tableOverview.loadElement(jsonData.tables);
-    }
+    data = await fetchTables();
+    localStorage.setItem('tables', JSON.stringify(data));
   } catch {
-    for (const tableOverview of tableOverviews) {
-      tableOverview.loadError();
-    }
+    data = JSON.parse(localStorage.getItem('tables'));
+  }
+
+  for (const tableOverview of tableOverviews) {
+    tableOverview.loadElement(data.tables);
   }
 };
 

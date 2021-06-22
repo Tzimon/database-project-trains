@@ -10,12 +10,12 @@ const loadTableOverviews = async () => {
   try {
     data = await fetchTables();
     localStorage.setItem('tables', JSON.stringify(data));
-  } catch {
+  } catch (error) {
     data = JSON.parse(localStorage.getItem('tables'));
   }
 
   for (const tableOverview of tableOverviews) {
-    tableOverview.loadElement(data.tables);
+    tableOverview.loadElement(data == null ? null : data.tables);
   }
 };
 

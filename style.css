@@ -59,9 +59,9 @@
   line-height: 1.25;
 }
 
-.table ul {
-  margin-bottom: 1em;
-}
+/* .table ul {
+  margin-bottom: 1rem;
+} */
 
 .table li + li {
   margin-top: 0.5rem;

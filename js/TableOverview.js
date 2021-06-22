@@ -37,11 +37,13 @@ class TableOverview {
       listElement.appendChild(listItemElement);
     });
 
-    const buttonElement = createElement('button', {
-      class: 'button',
-      innerText: 'Anzeigen',
-    });
-    element.appendChild(buttonElement);
+    // const buttonElement = createElement('input', {
+    //   class: 'button',
+    //   type: 'button',
+    //   value: 'Anzeigen',
+    //   onclick: () => this.showTable(tableName, element),
+    // });
+    // element.appendChild(buttonElement);
 
     return element;
   }

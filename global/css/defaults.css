@@ -6,7 +6,6 @@
 
   line-height: 1.8;
   word-wrap: break-word;
-  font-weight: 400;
   font-variation-settings: 'wght' var(--font-weight, 400),
     'wdth' var(--font-width, 80);
 }
@@ -37,7 +36,7 @@ a {
 
 h1 {
   font-size: 4rem;
-  --font-weight: 900;
+  --font-weight: 700;
   line-height: 1;
   color: var(--color-neutral-9);
 }

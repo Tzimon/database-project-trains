@@ -28,12 +28,16 @@ class TableOverview {
     element.appendChild(listElement);
 
     Object.keys(table.columns).forEach((columnName) => {
+      const rowData = table.columns[columnName];
       const listItemElement = createElement('li');
-      listItemElement.appendChild(
-        createElement('p', {
-          innerText: `${columnName} (${table.columns[columnName]})`,
-        })
-      );
+
+      const rowElement = createElement('p', {
+        innerText: `${columnName} [${rowData.Type}]`,
+      });
+
+      if (rowData.Key === 'PRI') rowElement.classList.add('primary');
+
+      listItemElement.appendChild(rowElement);
       listElement.appendChild(listItemElement);
     });
 

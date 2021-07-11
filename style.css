@@ -59,6 +59,10 @@
   line-height: 1.25;
 }
 
+.table .primary {
+  --font-weight: 700;
+}
+
 /* .table ul {
   margin-bottom: 1rem;
 } */

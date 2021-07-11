@@ -32,10 +32,10 @@ class TableOverview {
       const listItemElement = createElement('li');
 
       const rowElement = createElement('p', {
-        innerText: `${columnName} [${rowData.Type}]`,
+        innerText: `${columnName} [${rowData.type}]`,
       });
 
-      if (rowData.Key === 'PRI') rowElement.classList.add('primary');
+      if (rowData.key === 'PRI') rowElement.classList.add('primary');
 
       listItemElement.appendChild(rowElement);
       listElement.appendChild(listItemElement);
